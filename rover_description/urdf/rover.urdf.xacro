@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot name="six_wheel_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Parameters: wheel radius, base dimensions, etc. -->
+  <xacro:property name="wheel_radius" value="0.1"/>
+  <xacro:property name="wheel_width"  value="0.05"/>
+
+  <!-- Base link -->
+  <link name="base_link">
+    <inertial>
+      <mass value="20.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.6 0.4 0.2"/></geometry>
+      <material name="grey"><color rgba="0.5 0.5 0.5 1.0"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.6 0.4 0.2"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Example wheel + steering joint: front left -->
+  <joint name="front_left_steer_joint" type="continuous">
+    <origin xyz="0.3 0.2 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child  link="front_left_steer_link"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="front_left_steer_link"/>
+
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+    <parent link="front_left_steer_link"/>
+    <child  link="front_left_wheel_link"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="front_left_wheel_link">
+    <visual>
+      <geometry><cylinder radius="${wheel_radius}" length="${wheel_width}"/></geometry>
+    </visual>
+  </link>
+
+  <!-- Repeat for other wheels and steering joints (front_right, mid_left/right, rear_left/right) -->
+
+  <!-- IMU, GPS, Kinect, arm links omitted for brevity but same pattern -->
+
+</robot>
