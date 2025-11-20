@@ -37,6 +37,6 @@ Hardware
 
 On both PC and CM4 (same workspace; PC has extra packages):
 
-~$ mkdir -p ~/catkin_ws/src
-~$ cd ~/catkin_ws/src
-~$ catkin_init_workspace
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
