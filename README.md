@@ -31,3 +31,8 @@ Hardware
 - Kinect RGB-D camera via USB on CM4/PC.
 - YB-MVV21-V1 GPS via USB (NMEA serial) on CM4/PC.
 - Joystick via USB on PC.
+
+
+## 2. Catkin workspace & packages
+
+On both PC and CM4 (same workspace; PC has extra packages):
