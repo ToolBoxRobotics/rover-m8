@@ -1,7 +1,7 @@
 # rover-m8
 
 
-1. System architecture
+1.System architecture
 
 Hardware
 
