@@ -1,0 +1,10 @@
+<!-- rover_teleop/launch/joystick_teleop.launch -->
+<launch>
+  <node pkg="joy" type="joy_node" name="joy_node"/>
+  <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy">
+    <param name="axis_linear.x" value="1"/>
+    <param name="axis_angular.z" value="0"/>
+    <param name="scale_linear.x" value="1.0"/>
+    <param name="scale_angular.z" value="1.0"/>
+  </node>
+</launch>
