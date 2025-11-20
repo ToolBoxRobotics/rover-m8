@@ -1,0 +1,13 @@
+<launch>
+  <!-- Assume roscore running here -->
+
+  <include file="$(find rover_bringup)/launch/description.launch"/>
+  <include file="$(find rover_teleop)/launch/joystick_teleop.launch"/>
+  <include file="$(find rover_bringup)/launch/rviz.launch"/>
+
+  <!-- Gazebo sim (optional) -->
+  <!-- <include file="$(find rover_gazebo)/launch/rover_world.launch"/> -->
+
+  <!-- MoveIt for arm -->
+  <include file="$(find rover_arm_moveit)/launch/demo.launch"/>
+</launch>
